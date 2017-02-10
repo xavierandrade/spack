@@ -43,9 +43,7 @@ from spack import *
 class Qball(AutotoolsPackage):
     """Qball is a first-principles molecular dynamics code that is used to compute the electronic structure of atoms, molecules, solids, and liquids within the Density Functional Theory (DFT) formalism. It is a fork of the Qbox code by Francois Gygi."""
 
-    # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://github.com/LLNL/qball/"
-    url      = "https://github.com/LLNL/qball/archive/master.zip"
 
     version('master', git='https://github.com/LLNL/qball.git')
 
@@ -54,13 +52,13 @@ class Qball(AutotoolsPackage):
     depends_on('libtool',  type='build')
     depends_on('m4',       type='build')
 
-    # FIXME: Add additional dependencies if required.
     depends_on('blas')
     depends_on('gsl')
     depends_on('lapack')
     depends_on('mpi')
     depends_on('fftw')
     depends_on('scalapack')
+    depends_on('xerces-c')
 
     def autoreconf(self, spec, prefix):
         # FIXME: Modify the autoreconf method as necessary
